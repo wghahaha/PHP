@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf8"?>
+<class id="WNCDC085">
+  <student sequence="1">
+    <id>WNCD201703015</id>
+    <name>敬小越</name>
+    <sex>男</sex>
+    <age>24</age>
+    <degree>本科</degree>
+    <school>电子科技大学成都学院</school>
+  </student>
+  <student sequence="2">
+    <id>WNCD201703020</id>
+    <name>何小学</name>
+    <sex>男</sex>
+    <age>29</age>
+    <degree>本科</degree>
+    <school>成都理工大学</school>
+  </student>
+  <student sequence="3">
+    <id>WNCD201703025</id>
+    <name>杨小言</name>
+    <sex>女</sex>
+    <age>22</age>
+    <degree>大专</degree>
+    <school>四川华新现代职业学院</school>
+  </student>
+</class>

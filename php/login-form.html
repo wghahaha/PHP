@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录蜗牛笔记</title>
+    <style>
+        /* 利用CSS的样式属性为一个或一批元素设定相同的样式 */
+        /* 标签选择器，针对当面页面所有相同的标签，设置相同的样式 */
+        div_x {
+            width: 300px;   /* 设定DIV的宽度 */
+            height: 40px;   /* 设定DIV的高度 */
+            border: solid 1px rgb(204, 83, 144);     /* 设定DIV的边框样式 */
+            margin: auto;   /* 设定DIV水平居中 */
+            /* background-color: brown; */
+        }
+        /* 建议使用类选择器：针对相同的类设置样式 */
+        .login {
+            width: 350px;
+            height: 50px;
+            border: solid 0px red;
+            margin: auto;
+            text-align: center;
+        }
+
+        .footer {
+            width: 500px;
+            height: 50px;
+            border: solid 0px blue;
+            margin: auto;
+            text-align: center;     /* 让文字或图片在DIV中水平居中 */
+        }
+
+        .top-100 {
+            margin-top: 100px;
+        }
+        .font-30 {
+            font-size: 30px;
+        }
+
+        /* 为文本框或按钮设置统一样式 */
+        input {
+            width: 300px;
+            height: 35px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        button {
+            width: 310px;
+            height: 40px;
+            background-color: dodgerblue;
+            color: whitesmoke;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body style="background-image: url(../image/bg.jpg); background-size: cover;">
+        <div class="login top-100 font-30">登  录</div>
+        <form action="login.php" method="POST">
+            <div class="login">
+                <input type="text" name="username" />
+            </div>
+            <div class="login">
+                <input type="password" name="password" />
+            </div>
+            <div class="login">
+                <input type="text" name="vcode"/>
+            </div>
+            <div class="login">
+                <button type="submit">登录</button>
+                <!-- <input type="submit" value="登录" /> -->
+            </div>
+        </form>
+
+    <div class="footer top-100">版权所有©成都蜗牛创想科技有限公司 备案:蜀ICP备15014130号</div>
+</body>
+</html>

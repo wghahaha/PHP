@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <title>通过JS动态渲染JSON数据</title>
+    <style>
+        table {
+            width: 800px;
+            margin: auto;
+            border: solid 1px green;
+            border-spacing: 0px;
+        }
+        td {
+            border: solid 1px gray;
+            height: 30px;
+        }
+    </style>
+    <script>
+        // window.onload = function() {
+        function list() {
+            $.get('list-json.php', function(data){
+                // 后台响应给前端的JSON数据，其content-type有可能是:
+                // 1、text/plain或text/html，此时必须用eval执行将其转成JS对象
+                // 2、application/json，则不需要eval，直接使用即可
+                var data = eval(data); 
+                var content = "";
+                // data.forEach(function(article) {
+                data.forEach(article => {
+                    content += "<tr>";
+                    content += "<td>" + article['articleid'] + "</td>";
+                    content += "<td>" + article['author'] + "</td>";
+                    content += "<td>" + article['headline'] + "</td>";
+                    content += "<td>" + article['viewcount'] + "</td>";
+                    content += "<td>" + article['createtime'] + "</td>";
+                    content += "<td><button>删除</button></td>";
+                    content += "</tr>";
+                });
+                $("#articleTable").append(content);
+                $("#articleTable").css('display', '');
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="list()">加载</button>
+
+    <table id="articleTable" style="display: none;">
+        <tr>
+            <td>编号</td>
+            <td>作者</td>
+            <td>标题</td>
+            <td>次数</td>
+            <td>时间</td>
+            <td>操作</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <title>注册</title>
+    <style>
+        table {
+            width: 600px;
+            margin: auto;
+            border-spacing: 0;
+            border: solid 1px green;
+        }
+        td {
+            height: 50px;
+            border: solid 1px gray;
+            text-align: center;
+        }
+        button {
+            width: 200px;
+            height: 35px;
+            background-color: dodgerblue;
+            color: whitesmoke;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        // function doReg() {
+        //     var username = $("#username").val();
+        //     var password = $("#password").val();
+        //     var param = "username=" + username + "&password=" + password;
+        //     $.post('reg.php', param, function(data){
+        //         if (data == 'reg-pass') {
+        //             window.alert("注册成功");
+        //             location.href="login-ajax.html";
+        //         }
+        //         else if (data == 'user-exists') {
+        //             window.alert("用户名已经注册");
+        //         }
+        //         else {
+        //             window.alert("注册失败");
+        //         }
+        //     });
+        // }
+    </script>
+</head>
+<body>
+    <table>
+        <!-- 上传附件，必须要加上 enctype="multipart/form-data" 属性  -->
+        <form action="reg.php" method="POST" enctype="multipart/form-data">
+        <tr>
+            <td width="40%">用户名：</td>
+            <td width="60%"><input type="text" id="username" name="username" /></td>
+        </tr> 
+        <tr> 
+            <td>密&nbsp;&nbsp;码：</td>
+            <td><input type="text" id="password" name="password"/></td>
+        </tr>
+        <tr> 
+            <td>头&nbsp;&nbsp;像：</td>
+            <td><input type="file" name="photo"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="doReg()">注册</button></td>
+        </tr>
+        </form>
+    </table>
+</body>
+</html>
